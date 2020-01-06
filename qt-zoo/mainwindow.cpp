@@ -80,9 +80,7 @@ void MainWindow::updateMessageDisplay()
     QStringListModel *model;
     model = new QStringListModel(this);
     QStringList List;
-
     for (int i = 0; i < Zoo::getInstance()->getMessages()->getMessages().length(); i++) {
-
         List.append(QString("Error level ").append(Zoo::getInstance()->getMessages()->getMessages().at(i)->getErrorLevel()).append(" From : "+Zoo::getInstance()->getMessages()->getMessages().at(i)->getEmittorName()+" Message : "+Zoo::getInstance()->getMessages()->getMessages().at(i)->getMessage()));
     }
     model->setStringList(List);
@@ -98,7 +96,7 @@ void MainWindow::on_btn_earn_clicked()
 {
     Zoo *zoo = Zoo::getInstance();
     zoo->addMoney(50);
-    updateBudgetDisplay();
+    updateDisplay();
 }
 
 void MainWindow::on_btn_spend_clicked()
@@ -107,7 +105,7 @@ void MainWindow::on_btn_spend_clicked()
 //    {
         Zoo *zoo = Zoo::getInstance();
         zoo->removeMoney(30);
-        updateBudgetDisplay();
+        updateDisplay();
 //    }
 //    else
 //    {
