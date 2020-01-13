@@ -6,6 +6,8 @@
 #include "zoostock.h"
 #include "zoomessages.h"
 #include <QMap>
+#include <QVector>
+#include "zoohabitat.h"
 
 typedef QMap<QString, ZooStock*> Stocklist;
 
@@ -15,6 +17,8 @@ class Zoo : public ZooObject
     Stocklist stockList;
     static Zoo *m_zoo;
     ZooMessages *m_messages;
+    QVector<ZooHabitat*> *m_habitats;
+    ZooHabitats* habitats;
 public:
     static Zoo *getInstance(const QString &name = "");
     ~Zoo();
@@ -22,9 +26,11 @@ public:
     bool removeMoney(int amount);
     int getMoney();
     void testMe();
-
     ZooMessages *getMessages() const;
-    void setMessages(ZooMessages *messages);
+    bool buyHabitat();
+    bool sellHabitat(ZooHabitat* habitat);
+    bool destroyHabitat(ZooHabitat* habitat);
+    ZooHabitats* getHabitats();
 
 private:
     Zoo(const QString &name);

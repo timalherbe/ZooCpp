@@ -19,7 +19,11 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     zoo.cpp \
+    zooanimal.cpp \
+    zooanimals.cpp \
     zoobudget.cpp \
+    zoohabitat.cpp \
+    zoohabitats.cpp \
     zoomessage.cpp \
     zoomessages.cpp \
     zooobject.cpp \
@@ -28,7 +32,11 @@ SOURCES += \
 HEADERS += \
     mainwindow.h \
     zoo.h \
+    zooanimal.h \
+    zooanimals.h \
     zoobudget.h \
+    zoohabitat.h \
+    zoohabitats.h \
     zoomessage.h \
     zoomessages.h \
     zooobject.h \

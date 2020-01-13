@@ -38,3 +38,27 @@ ZooMessages::MessagesList ZooMessages::getMessagesByEmittor(ZooObject* emetteur)
     }
     return messageList;
 }
+
+ZooMessage *ZooMessages::getLastUnreadMessage()
+{
+    if(messages.size()==0){
+        return NULL;
+    }
+    for(int i= messages.size() - 1; i == 0; i--){
+        if(messages.at(i)->isUnread()){
+            messages.at(i)->markAsRead();
+            return messages.at(i);
+        }
+    }
+}
+
+QString ZooMessages::getLastUnreadMessageAsHtml()
+{
+    QString html = QString("Error level ")
+            .append(getLastUnreadMessage()->getErrorLevel())
+            .append(" From : "+getLastUnreadMessage()->getEmittorName()
+                    +" Message : "+getLastUnreadMessage()->getMessage());
+    return html;
+}
+
+

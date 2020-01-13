@@ -13,7 +13,7 @@ private:
     ZooErrorLevel errorLevel;
     QString message;
     ZooObject* from; //emetteur
-
+    bool read;
 public:
     ZooMessage(ZooErrorLevel errorLevel, QString message, ZooObject* from);
 
@@ -21,6 +21,8 @@ public:
     QString getMessage() const;
     ZooObject *getFrom() const;
     QString getEmittorName();
+    void markAsRead();
+    bool isUnread();
 };
 
 #endif // ZOOMESSAGE_H

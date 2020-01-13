@@ -18,9 +18,25 @@ ZooMessages *Zoo::getMessages() const
     return m_messages;
 }
 
-void Zoo::setMessages(ZooMessages *messages)
+bool Zoo::buyHabitat()
 {
-    m_messages = messages;
+
+}
+
+bool Zoo::sellHabitat(ZooHabitat* habitat)
+{
+
+}
+
+bool Zoo::destroyHabitat(ZooHabitat* habitat)
+{
+
+}
+
+ZooHabitats *Zoo::getHabitats()
+{
+
+    return habitats;
 }
 
 Zoo *Zoo::getInstance(const QString &name)

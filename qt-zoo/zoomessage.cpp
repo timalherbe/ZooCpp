@@ -22,11 +22,22 @@ QString ZooMessage::getEmittorName()
     return typeid (from).name();
 }
 
+void ZooMessage::markAsRead()
+{
+    read = true;
+}
+
+bool ZooMessage::isUnread()
+{
+    return !read;
+}
+
 ZooMessage::ZooMessage(ZooErrorLevel errorLevel, QString message, ZooObject* from)
     :ZooObject("message"),
       errorLevel(errorLevel),
       message(message),
-      from(from)
+      from(from),
+      read(false)
 {
 
     QMessageBox msgBox;

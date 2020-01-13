@@ -1,0 +1,15 @@
+#ifndef ZOOANIMALS_H
+#define ZOOANIMALS_H
+
+#include "zoohabitat.h"
+
+class ZooAnimals : public ZooObject
+{
+    ZooHabitat* parent = nullptr;
+public:
+    ZooAnimals(ZooHabitat* parent);
+    ZooHabitat *getParent() const;
+    void setParent(ZooHabitat *value);
+};
+
+#endif // ZOOANIMALS_H

@@ -127,3 +127,13 @@ void MainWindow::on_btn_spend_clicked()
 }
 
 
+
+void MainWindow::on_pushButton_buyHabitat_clicked()
+{
+    
+}
+
+void MainWindow::on_pushButton_showMessages_clicked()
+{
+    
+}

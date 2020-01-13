@@ -17,7 +17,8 @@ public:
     MessagesList getMessages() const;
     MessagesList getMessagesByErrorLevel(ZooErrorLevel lvl);
     MessagesList getMessagesByEmittor(ZooObject* emetteur);
-
+    ZooMessage* getLastUnreadMessage();
+    QString getLastUnreadMessageAsHtml();
 };
 
 #endif // ZOOMESSAGES_H

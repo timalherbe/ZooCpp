@@ -1,0 +1,16 @@
+#include "zooanimals.h"
+
+ZooHabitat *ZooAnimals::getParent() const
+{
+    return parent;
+}
+
+void ZooAnimals::setParent(ZooHabitat *value)
+{
+    parent = value;
+}
+
+ZooAnimals::ZooAnimals(ZooHabitat* parent):ZooObject("Animals"), parent(parent)
+{
+    
+}
