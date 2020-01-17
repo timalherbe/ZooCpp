@@ -1,9 +1,36 @@
 #include "zoohabitat.h"
 
+class ZooHabitats;
+
+ZooAnimals* ZooHabitat::getAnimals() const
+{
+    return animals;
+}
+
+void ZooHabitat::setAnimals(ZooAnimals *value)
+{
+    animals = value;
+}
+
+int ZooHabitat::getPrice() const
+{
+    return price;
+}
+
+void ZooHabitat::setPrice(int value)
+{
+    price = value;
+}
+
 ZooHabitat::ZooHabitat(ZooHabitats* parent)
     :ZooObject("habitats"), parent(parent)
 {
 
+}
+
+ZooHabitat::~ZooHabitat()
+{
+    delete animals, parent;
 }
 
 ZooHabitats *ZooHabitat::getParent() const
@@ -14,19 +41,4 @@ ZooHabitats *ZooHabitat::getParent() const
 void ZooHabitat::setParent(ZooHabitats *value)
 {
     parent = value;
-}
-
-ZooHabitat::~ZooHabitat()
-{
-    delete animals;
-}
-
-void ZooHabitat::addAnimal(ZooAnimal *animal)
-{
-    animals->push_back(animal);
-}
-
-ZooHabitat::AnimalList* ZooHabitat::getAnimals()
-{
-    return animals;
 }

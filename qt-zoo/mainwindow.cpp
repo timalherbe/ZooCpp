@@ -90,7 +90,7 @@ void MainWindow::updateMessageDisplay()
     ui->listView_messages->setModel(model);
 
 
-    ui->textEdit_messages->append(Zoo::getInstance()->getMessages()->getLastUnreadMessageAsHtml());
+    //ui->textEdit_messages->append(Zoo::getInstance()->getMessages()->getLastUnreadMessageAsHtml());
 
 
 
@@ -127,3 +127,19 @@ void MainWindow::on_btn_spend_clicked()
 }
 
 
+
+void MainWindow::on_pushButton_buyHabitat_clicked()
+{
+    bool res = Zoo::getInstance()->buyHabitat();
+}
+
+void MainWindow::on_pushButton_showMessages_clicked()
+{
+    if (showMessages){
+        ui->listView_messages->hide();
+        ui->lbl_messages->hide();
+    } else {
+        ui->listView_messages->show();
+        ui->lbl_messages->show();
+    }
+}

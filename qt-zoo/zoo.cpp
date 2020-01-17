@@ -20,12 +20,19 @@ ZooMessages *Zoo::getMessages() const
 
 bool Zoo::buyHabitat()
 {
-
+    ZooHabitat* habitat;
+    int amount = habitat->getPrice();
+    ZooBudget* budget = ZooBudget::getInstance();
+    if (budget->removeMoney(amount)){
+        ZooHabitats::getInstance()->addHabitat(habitat);
+        return true;
+    }
+    return false;
 }
 
 bool Zoo::sellHabitat(ZooHabitat* habitat)
 {
-
+    ZooBudget::getInstance()->addMoney(ZooHabitats::getInstance()->getHabitats()->contains(habitat));//pas fini
 }
 
 bool Zoo::destroyHabitat(ZooHabitat* habitat)
@@ -36,7 +43,7 @@ bool Zoo::destroyHabitat(ZooHabitat* habitat)
 ZooHabitats *Zoo::getHabitats()
 {
 
-    return habitats;
+    return ZooHabitats::getInstance();
 }
 
 Zoo *Zoo::getInstance(const QString &name)

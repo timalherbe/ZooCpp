@@ -2,20 +2,25 @@
 #define ZOOHABITAT_H
 
 #include "zooobject.h"
-#include <QVector>
-#include "zooanimal.h"
-#include "zoohabitats.h"
+#include "zooanimals.h"
+
+class ZooHabitats;
+class ZooAnimals;
 
 class ZooHabitat : public ZooObject
 {
-    typedef QVector<ZooAnimal*> AnimalList;
     ZooHabitats* parent = nullptr;
-    AnimalList *animals;
+    ZooAnimals* animals = nullptr;
+    int price;
 public:
     ZooHabitat(ZooHabitats* parent);
     ~ZooHabitat();
-    void addAnimal(ZooAnimal *animal);
-    AnimalList* getAnimals();
+    ZooHabitats *getParent() const;
+    void setParent(ZooHabitats *value);
+    ZooAnimals* getAnimals() const;
+    void setAnimals(ZooAnimals *value);
+    int getPrice() const;
+    void setPrice(int value);
 };
 
 #endif // ZOOHABITAT_H

@@ -26,11 +26,16 @@ private slots:
 
     void on_btn_spend_clicked();
 
+    void on_pushButton_buyHabitat_clicked();
+
+    void on_pushButton_showMessages_clicked();
+
 private:
     Ui::MainWindow *ui;
     void setEditMode(bool editMode);
     void updateBudgetDisplay();
     void updateDisplay();
     void updateMessageDisplay();
+    bool showMessages = false;
 };
 #endif // MAINWINDOW_H
